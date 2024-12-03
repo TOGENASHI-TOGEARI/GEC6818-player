@@ -3,7 +3,7 @@
 int System()
 {
     OpenPicture(0, 0, "./picture/wait.bmp");
-    system("mplayer -slave -quiet -input file=/fifo -geometry 300:200 -zoom -x 178 -y 178 ./video/1.avi &");
+    system("mplayer -slave -quiet -input file=/fifo -geometry +300+200 -zoom -x 178 -y 178 ./video/1.avi &");
     sleep(5);
     OpenPicture(0, 0, "./picture/lock0.bmp");
 
