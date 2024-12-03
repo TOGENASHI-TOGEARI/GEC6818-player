@@ -4,7 +4,7 @@ int QQMusicApp()
 {
     int musicnum = 0, music_flag = 0;
     int musicnext();
-    ShowBmp(0, 0, "./picture/music.bmp");
+    OpenPicture(0, 0, "./picture/music.bmp");
 
     while (1)
     {
@@ -34,7 +34,7 @@ int QQMusicApp()
             printf("已退出！\n");
             system("killall -9 madplay");
             music_flag = 0;
-            ShowBmp(0, 0, "./picture/main.bmp");
+            OpenPicture(0, 0, "./picture/main.bmp");
             PI.Ts_x = -1;
             PI.Ts_y = -1;
             break;

@@ -3,7 +3,7 @@
 int PictureAPP()
 {
     int next = 0;
-    ShowBmp(0, 0, "./picture/photo4.bmp");
+    OpenPicture(0, 0, "./picture/photo4.bmp");
     while (1)
     {
         Get_Xy();
@@ -14,22 +14,22 @@ int PictureAPP()
             printf("下一张！\n");
             if (next == 2)
             {
-                ShowBmp(0, 0, "./picture/photo2.bmp");
+                OpenPicture(0, 0, "./picture/photo2.bmp");
             }
 
             else if (next == 3)
             {
-                ShowBmp(0, 0, "./picture/photo3.bmp");
+                OpenPicture(0, 0, "./picture/photo3.bmp");
             }
 
             else if (next == 1)
             {
-                ShowBmp(0, 0, "./picture/photo1.bmp");
+                OpenPicture(0, 0, "./picture/photo1.bmp");
             }
 
             else if (next == 0)
             {
-                ShowBmp(0, 0, "./picture/photo4.bmp");
+                OpenPicture(0, 0, "./picture/photo4.bmp");
             }
         }
 
@@ -42,27 +42,27 @@ int PictureAPP()
                 printf("下一张！\n");
                 if (next == 2)
                 {
-                    ShowBmp(0, 0, "./picture/photo2.bmp");
+                    OpenPicture(0, 0, "./picture/photo2.bmp");
                 }
 
                 else if (next == 3)
                 {
-                    ShowBmp(0, 0, "./picture/photo3.bmp");
+                    OpenPicture(0, 0, "./picture/photo3.bmp");
                 }
 
                 else if (next == 1)
                 {
-                    ShowBmp(0, 0, "./picture/photo1.bmp");
+                    OpenPicture(0, 0, "./picture/photo1.bmp");
                 }
                 sleep(2);
             }
-            ShowBmp(0, 0, "./picture/photo4.bmp");
+            OpenPicture(0, 0, "./picture/photo4.bmp");
         }
 
         if (PI.Ts_x > 690 && PI.Ts_x < 800 && PI.Ts_y > 220 && PI.Ts_y < 480)
         {
             printf("退出！\n");
-            ShowBmp(0, 0, "./picture/main.bmp");
+            OpenPicture(0, 0, "./picture/main.bmp");
             PI.Ts_x = -1;
             PI.Ts_y = -1;
             break;

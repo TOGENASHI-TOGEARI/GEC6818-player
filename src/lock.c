@@ -1,4 +1,5 @@
 #include <Project.h>
+
 int keynum1 = 0;
 int key1[7] = {0};
 int truekey[7] = {0, 2, 2, 2, 0, 1, 2};
@@ -11,31 +12,31 @@ int lock()
         switch (keynum1)
         {
         case 0:
-            ShowBmp(0, 0, "./picture/lock0.bmp");
+            OpenPicture(0, 0, "./picture/lock0.bmp");
             break;
 
         case 1:
-            ShowBmp(0, 0, "./picture/lock1.bmp");
+            OpenPicture(0, 0, "./picture/lock1.bmp");
             break;
 
         case 2:
-            ShowBmp(0, 0, "./picture/lock2.bmp");
+            OpenPicture(0, 0, "./picture/lock2.bmp");
             break;
 
         case 3:
-            ShowBmp(0, 0, "./picture/lock3.bmp");
+            OpenPicture(0, 0, "./picture/lock3.bmp");
             break;
 
         case 4:
-            ShowBmp(0, 0, "./picture/lock4.bmp");
+            OpenPicture(0, 0, "./picture/lock4.bmp");
             break;
 
         case 5:
-            ShowBmp(0, 0, "./picture/lock5.bmp");
+            OpenPicture(0, 0, "./picture/lock5.bmp");
             break;
 
         case 6:
-            ShowBmp(0, 0, "./picture/lock6.bmp");
+            OpenPicture(0, 0, "./picture/lock6.bmp");
             break;
 
         default:

@@ -12,7 +12,7 @@ int VideoInit()
     fd_fifo = open("/fifo", O_RDWR);
     if (fd_fifo == -1)
     {
-        printf("打开管道文件失败！\n");
+        printf("失败！\n");
         return -1;
     }
 
@@ -22,7 +22,7 @@ int VideoInit()
 int VideoFree()
 {
     system("killall -9 mplayer");
-    ShowBmp(0, 0, "./picture/main.bmp");
+    OpenPicture(0, 0, "./picture/main.bmp");
     PI.Ts_x = -1;
     PI.Ts_y = -1;
 
@@ -64,7 +64,7 @@ int nextvideo(int nextnum)
 int BilibiliApp()
 {
     int nextnum = 0;
-    ShowBmp(0, 0, "./picture/video.bmp");
+    OpenPicture(0, 0, "./picture/video.bmp");
     VideoInit();
 
     system("mplayer -slave -quiet -input file=/fifo -geometry 0:0 -zoom -x 800 -y 450 ./video/gbc0.avi &");
@@ -85,7 +85,7 @@ int BilibiliApp()
 
         if (PI.Ts_x > 294 && PI.Ts_x < 379 && PI.Ts_y > 430 && PI.Ts_y < 480)
         {
-            printf("后退5秒！\n");
+            printf("后退5秒!\n");
             SendCmd("seek -5\n");
         }
 
