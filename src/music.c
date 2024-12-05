@@ -9,27 +9,33 @@ int QQMusicApp()
     while (1)
     {
         Get_Xy();
-        if (PI.Ts_x > 0 && PI.Ts_x < 400 && PI.Ts_y > 0 && PI.Ts_y < 240 && music_flag == 0)
+        if (PI.Ts_x > 0 && PI.Ts_x < 265 && PI.Ts_y > 0 && PI.Ts_y < 200 && music_flag == 0)
         {
             printf("开始播放！\n");
             system("madplay ./music/cage.mp3 &");
             music_flag = 1;
         }
 
-        if (PI.Ts_x > 0 && PI.Ts_x < 400 && PI.Ts_y > 240 && PI.Ts_y < 480)
+        if (PI.Ts_x > 490 && PI.Ts_x < 800 && PI.Ts_y > 360 && PI.Ts_y < 480)
         {
             printf("下一首！\n");
-
+            musicnum++;
             musicnum = musicnext(musicnum);
         }
 
-        if (PI.Ts_x > 400 && PI.Ts_x < 800 && PI.Ts_y > 0 && PI.Ts_y < 240)
+        if (PI.Ts_x > 0 && PI.Ts_x < 300 && PI.Ts_y > 360 && PI.Ts_y < 480)
+        {
+            printf("上一首！\n");
+            musicnum--;
+            musicnum = musicnext(musicnum);
+        }
+        if (PI.Ts_x > 500 && PI.Ts_x < 800 && PI.Ts_y > 0 && PI.Ts_y < 200)
         {
             printf("暂停！\n");
             system("killall -19 madplay");
         }
 
-        if (PI.Ts_x > 400 && PI.Ts_x < 800 && PI.Ts_y > 240 && PI.Ts_y < 480)
+        if (PI.Ts_x > 300 && PI.Ts_x < 500 && PI.Ts_y > 120 && PI.Ts_y < 320)
         {
             printf("已退出！\n");
             system("killall -9 madplay");
@@ -39,7 +45,7 @@ int QQMusicApp()
             PI.Ts_y = -1;
             break;
         }
-        if (PI.Ts_x > 0 && PI.Ts_x < 400 && PI.Ts_y > 0 && PI.Ts_y < 240 && music_flag != 0)
+        if (PI.Ts_x > 0 && PI.Ts_x < 265 && PI.Ts_y > 0 && PI.Ts_y < 200 && music_flag != 0)
         {
             printf("继续播放！\n");
             system("killall -18 madplay");
